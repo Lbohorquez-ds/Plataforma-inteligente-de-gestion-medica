@@ -1,0 +1,93 @@
+/* --- LAYOUT GENERAL --- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #e3f0f7; /* Un celeste un poco más claro como el de Figma */
+    min-height: 100vh;
+    display: flex; 
+    flex-direction: column; /* Magia: pone la Topbar arriba y el resto abajo */
+}
+
+.contenedor-pantalla {
+    display: flex; /* Magia: pone el Sidebar a la izq y el Main a la der */
+    flex: 1; /* Ocupa el alto que sobra de la pantalla */
+}
+
+/* --- BARRA SUPERIOR (TOPBAR) --- */
+.topbar {
+    background-color: #0b3558; /* El azul oscuro del diseño */
+    height: 60px;
+    display: flex;
+    justify-content: space-between; /* Manda el logo a la izq y el usuario a la der */
+    align-items: center; /* Los centra verticalmente */
+    padding: 0 40px;
+    color: white;
+}
+
+.usuario-perfil {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Separación entre el círculo y el nombre */
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.avatar {
+    background-color: #4da6ff; /* Celeste brillante del Figma */
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%; /* Hace que sea un círculo perfecto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.logo-img {
+    height: 40px; /* Esto hace que entre perfecto en tu barra de 60px */
+    width: auto; /* Mantiene las proporciones originales para que no se estire */
+    display: block;
+}
+
+
+/* --- BARRA LATERAL (SIDEBAR) --- */
+.sidebar {
+    width: 240px;
+    background-color: #c5d4df; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 0;
+    border-right: 1px solid #0b3558;
+}
+
+.item-menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 24px;
+    color: #0b3558; 
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+.item-menu.activo {
+    background-color: #edf5f9;
+    border-top: 1px solid #0b3558;
+    border-bottom: 1px solid #0b3558;
+}
+
+.item-menu i {
+    font-size: 16px;
+    color: #50677a;
+    width: 20px;
+}
+
+.sidebar-footer {
+    padding: 0 24px;
+    font-size: 11px;
+    color: #50677a;
+    line-height: 1.4;
+}

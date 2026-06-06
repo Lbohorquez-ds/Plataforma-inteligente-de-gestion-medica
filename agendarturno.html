@@ -1,125 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Agendar Turno</title>
+    <link rel="stylesheet" href="agendarturno.css">
 </head>
+
 <body>
-    <div>
-        <h1>Agregar Turno</h1>
-        <a href=""> <img src="" alt="Volver"></a>
-    </div>
-    <div class="indicador-progreso">
+    <header class="topbar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo Axis" class="logo-img">
+        </div>
+        <div class="usuario-perfil">
+            <div class="avatar">PA</div>
+            <span class="nombre">Paula</span>
+        </div>
+    </header>
 
-    <div class="paso">
-        <span>1</span>
-        <span>Especialidad</span>
-    </div>
+    <div class="contenedor-pantalla">
+        <aside class="sidebar">
+            <nav class="menu-lateral">
+                <a href="#" class="item-menu">
+                    <i class="fa-solid fa-table-cells-large"></i> Inicio
+                </a>
+                <a href="agendarturno.html" class="item-menu activo">
+                    <i class="fa-regular fa-circle-plus"></i> Nuevo turno
+                </a>
+                <a href="misturnos.html" class="item-menu">
+                    <i class="fa-regular fa-calendar-days"></i> Mis turnos
+                </a>
+            </nav>
+            <footer class="sidebar-footer">
+                <p>© 2026 AA — Todos los derechos reservados</p>
+                <p>Plataforma protegida bajo Ley 25.326</p>
+            </footer>
+        </aside>
 
-    <div class="paso">
-        <span>2</span>
-        <span>Profesional</span>
-    </div>
-
-    <div class="paso">
-        <span>3</span>
-        <span>Horario</span>
-    </div>
-
-    <div class="paso">
-        <span>4</span>
-        <span>Confirmar</span>
-    </div>
-
-    <div class="caja-desplegable">
-        <label>Especialidad seleccionada</label>
-        <select>
-            <option disabled selected>Elegí una especialidad...</option>
-            <option>Endocrinología</option>
-            <option>Cardiología</option>
-            <option>Dermatología</option>
-            <option>Gastroenterología</option>
-            <option>Neurología</option>
-        </select>
-    </div>
-
-    <div class="caja-desplegable">
-        <label>Profesional seleccionado</label>
-        <select>
-            <option disabled selected>Elegí un profesional...</option>
-            <option>Dr. Juan Pérez</option>
-            <option>Dr. López</option>
-            <option>Dr. Martínez</option>
-            <option>Dr. García</option>
-            <option>Dr. Rodríguez</option>
-        </select>
-    </div>
-
-    <p>Seleccioná una fecha disponible</p>
-    <div class="calendario-contenedor">
-
-        <header class="calendario-header">
-            <button> /- </button>
-            <span>Junio 2026</span>
-            <button> -/ </button>
-        </header>
-
-        <div class="calendario-dias-semana">
-            <span>Lun</span>
-            <span>Mar</span>
-            <span>Mié</span>
-            <span>Jue</span>
-            <span>Vie</span>
-            <span>Sáb</span>
-            <span>Dom</span>
+    <main class="contenido-principal">
+        <div>
+            <h1>Agendar Turno</h1>
+            <a href="#"> <img src="" alt="Volver"></a>
         </div>
 
-        <div class="calendario-numero-dias-semana">
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>4</span>
-            <span>5</span>
-            <span>6</span>
-            <span>7</span>
-            <span>8</span>
-            <span>9</span>
-            <span>10</span>
-            <span>11</span>
-            <span>12</span>
-            <span>13</span>
-            <span>14</span>
-            <span>15</span>
-            <span>16</span>
-            <span>17</span>
-            <span>18</span>
-            <span>19</span>
-            <span>20</span>
-            <span>21</span>
-            <span>22</span>
-            <span>23</span>
-            <span>24</span>
-            <span>25</span>
-            <span>26</span>
-            <span>27</span>
-            <span>28</span>
-            <span>29</span>
-            <span>30</span>
+        <div class="indicador-progreso">
+            <div class="paso">
+                <span>1</span>
+                <span>Especialidad</span>
+            </div>
+
+            <div class="paso">
+                <span>2</span>
+                <span>Profesional</span>
+            </div>
+
+            <div class="paso">
+                <span>3</span>
+                <span>Horario</span>
+            </div>
+
+            <div class="paso">
+                <span>4</span>
+                <span>Confirmar</span>
+            </div>
         </div>
-    </div>
 
-    <p>Horarios disponibles — Jueves 5 de junio</p>
-    <div class="grilla-horarios">
-        <button>09:00</button>
-        <button>09:30</button>
-        <button>10:00</button>
-        <button>14:00</button>
-        <button>16:00</button>
-    </div>
+        <div class="caja-desplegable">
+            <label>Especialidad seleccionada</label>
+            <select>
+                <option disabled selected>Elegí una especialidad...</option>
+                <option>Endocrinología</option>
+                <option>Cardiología</option>
+                <option>Dermatología</option>
+                <option>Gastroenterología</option>
+                <option>Neurología</option>
+            </select>
+        </div>
 
-    <div class="boton-continuar">
-        <a href="">Continuar</a>
+        <div class="caja-desplegable">
+            <label>Profesional seleccionado</label>
+            <select>
+                <option disabled selected>Elegí un profesional...</option>
+                <option>Dr. Juan Pérez</option>
+                <option>Dr. López</option>
+                <option>Dr. Martínez</option>
+                <option>Dr. García</option>
+                <option>Dr. Rodríguez</option>
+            </select>
+        </div>
+
+        <p>Seleccioná una fecha disponible</p>
+        <div class="calendario-contenedor">
+
+            <header class="calendario-header">
+                <button> /- </button>
+                <span>Junio 2026</span>
+                <button> -/ </button>
+            </header>
+
+            <div class="calendario-dias-semana">
+                <span>Lun</span>
+                <span>Mar</span>
+                <span>Mié</span>
+                <span>Jue</span>
+                <span>Vie</span>
+                <span>Sáb</span>
+                <span>Dom</span>
+            </div>
+
+            <div class="calendario-numero-dias-semana">
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+                <span>7</span>
+                <span>8</span>
+                <span>9</span>
+                <span>10</span>
+                <span>11</span>
+                <span>12</span>
+                <span>13</span>
+                <span>14</span>
+                <span>15</span>
+                <span>16</span>
+                <span>17</span>
+                <span>18</span>
+                <span>19</span>
+                <span>20</span>
+                <span>21</span>
+                <span>22</span>
+                <span>23</span>
+                <span>24</span>
+                <span>25</span>
+                <span>26</span>
+                <span>27</span>
+                <span>28</span>
+                <span>29</span>
+                <span>30</span>
+            </div>
+        </div>
+
+        <p>Horarios disponibles — Jueves 5 de junio</p>
+        <div class="grilla-horarios">
+            <button>09:00</button>
+            <button>09:30</button>
+            <button>10:00</button>
+            <button>14:00</button>
+            <button>16:00</button>
+        </div>
+
+        <div class="boton-continuar">
+            <a href="misturnos.html">Continuar</a>
+        </div>
+    </main>
     </div>
 </body>
 </html>
