@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Turnos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="estiloturnos.css">
+</head>
+	
+<body>
+    <header class="topbar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo Axis" class="logo-img">
+        </div>
+
+        <div class="usuario-perfil">
+            <div class="avatar">PA</div>
+            <span class="nombre">Paula</span>
+        </div>
+       
+    </header>
+
+    <div class="contenedor-pantalla">
+
+        <aside class="sidebar">
+            <nav class="menu-lateral">
+                <a href="inicio.html" class="item-menu">
+                    <i class="fa-solid fa-table-cells-large"></i>
+                    Inicio
+                </a>
+
+                <a href="agendarturno.html" class="item-menu">
+                    <i class="fa-regular fa-circle-plus"></i>
+                    Nuevo turno
+                </a>
+
+                <a href="misturnos.html" class="item-menu activo">
+                    <i class="fa-regular fa-calendar-days"></i>
+                    Mis turnos
+                </a>
+                 
+                <a href="index.html" class="item-menu"><i class="fa-solid fa-user"></i>Cerrar Sesión</a>
+                
+            </nav>
+
+            <footer class="sidebar-footer">
+                <p>© 2026 AXIS — Todos los derechos reservados</p>
+                <p>Plataforma protegida bajo Ley 25.326</p>
+            </footer>
+        </aside>
+
+        <main class="contenedor-turnos">
+
+            <h1 class="titulo-pagina">Mis Turnos</h1>
+
+            <!-- Buscador con tus estilos de input -->
+            <div class="buscador-container">
+                <input type="text" id="buscarEspecialidad" placeholder="Buscar por especialidad...">
+            </div>
+
+            <!-- LISTA DE TURNOS -->
+            <div id="listaTurnos">
+
+                <!-- TURNO 1: ASIGNADO -->
+                <div class="turno asignado contenedor">
+                    <div class="titulo">TURNO</div>
+
+                    <div class="contenido">
+                        <div class="fila-info">
+                            <div class="dato">
+                                <label>Especialidad</label>
+                                <p class="valor-destacado">Cardiología</p>
+                            </div>
+                            <div class="dato">
+                                <label>Profesional</label>
+                                <p class="valor">Dr. Juan Pérez</p>
+                            </div>
+                        </div>
+
+                        <div class="fila-info">
+                            <div class="dato">
+                                <label>Fecha y Horario</label>
+                                <p class="valor">Lunes 15 de junio 2026 - 14:30 hs</p>
+                            </div>
+                        </div>
+
+                        <hr class="separador">
+
+                        <div class="fila-info footer-tarjeta">
+                            <div class="dato">
+                                <p class="faltan-dias">Faltan: 15 días</p>
+                            </div>
+                            <div class="estado-badge estado-asignado">
+                                ✅ Asignado
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TURNO 2: CANCELADO -->
+                <div class="turno cancelado contenedor">
+                    <div class="titulo">TURNO</div>
+
+                    <div class="contenido">
+                        <div class="fila-info">
+                            <div class="dato">
+                                <label>Especialidad</label>
+                                <p class="valor-destacado">Pediatría</p>
+                            </div>
+                            <div class="dato">
+                                <label>Profesional</label>
+                                <p class="valor">Dra. María López</p>
+                            </div>
+                        </div>
+
+                        <div class="fila-info">
+                            <div class="dato">
+                                <label>Fecha y Horario</label>
+                                <p class="valor">Viernes 5 de junio 2026 - 10:00 hs</p>
+                            </div>
+                        </div>
+
+                        <hr class="separador">
+
+                        <div class="fila-info footer-tarjeta">
+                            </div>
+                            <div class="estado-badge estado-cancelado">
+                                ❌ Cancelado
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="misTurnos.js"></script>
+    
+</body>
+</html>
