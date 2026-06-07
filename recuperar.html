@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Recuperar contraseña</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+	<div class="barra-superior"></div>
+	
+    <main class="login">
+        <section class="izquierda">
+            <div class="logo-contenedor">
+                <img src="logo.jpeg" alt="Logo Axis" class="logo">
+                <p class="slogan">El centro de tu operación inteligente</p>
+            </div>
+
+            <div class="texto-principal">
+                <h1>Recuperar tu cuenta en Axis</h1>
+                <p>
+                    Registrate para gestionar tus turnos, recibir recordatorios
+                    y acceder a tu información de forma simple y segura.
+                </p>
+                <ul>
+                    <li>✓ Acceso rápido a tus datos</li>
+                    <li>✓ Gestión de turnos online</li>
+                    <li>✓ Información protegida</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="derecha">
+           <div class="formulario">
+		   <h2>RECUPERAR CONTRASEÑA</h2>
+			<p class="subtitulo">Ingresá tus datos para verificar tu identidad</p>
+				<div class="contenido">
+					<select id="rol">
+								<option value="" selected disabled>Elige una opción </option>
+								<option value="paciente">Paciente</option>
+								<option value="profesional">Profesional</option>
+								<option value="admin">Administrador</option>
+					</select>
+
+					<label for="usuario">Usuario</label>
+					<input type="text" id="usuario" placeholder="Usuario">
+					<label for="respuesta">Respuesta secreta</label>
+					<input type="text" id="respuesta" placeholder="Respuesta secreta">
+
+					<button onclick="verificarUsuario()"> Verificar identidad </button>
+
+					<div id="cambiarPass" style="display:none;">
+					<input	type="password" id="nuevaPassword" placeholder="Nueva contraseña">
+					<button onclick="cambiarPassword()"> Cambiar contraseña </button>
+					</div>
+					<br>
+					<p class="registro">
+						¿Recordaste tu contraseña?
+						<a href="index.html">Iniciar sesión</a>
+					</p>
+				</div>
+			</div>
+		</section>
+	</main>
+	<script src="script.js"></script>
+	</body>
+</html>

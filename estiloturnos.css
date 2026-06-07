@@ -1,0 +1,256 @@
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#e3f0f7;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+.contenedor-pantalla{
+    display:flex;
+    flex:1;
+}
+
+/* --- BARRA SUPERIOR (TOPBAR) --- */
+.topbar {
+    background-color: #0b3558; /* El azul oscuro del diseño */
+    height: 60px;
+    display: flex;
+    justify-content: space-between; /* Manda el logo a la izq y el usuario a la der */
+    align-items: center; /* Los centra verticalmente */
+    padding: 0 40px;
+    color: white;
+}
+
+.usuario-perfil{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    font-weight:bold;
+}
+
+.avatar{
+    background:#4da6ff;
+    color:white;
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.logo-img{
+    height:40px;
+    width:auto;
+}
+
+.contenedor {
+    width: 100%; 
+    max-width: 650px;
+    background: #edf5f9;
+    border: 1px solid #0b3558; 
+    border-radius: 18px; 
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,.15);
+    margin-bottom: 25px; 
+}
+
+.titulo {
+    background: #0b3558; 
+    color: white;
+    text-align: left; 
+    padding: 14px 25px; 
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.contenido {
+    padding: 25px;
+}
+
+h2 {
+    display: none;
+}
+
+input, select {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #c5d4df;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background: white;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #0b3558;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 14px;
+    background: #0b3558;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+}
+button:hover {
+    opacity: .9;
+}
+
+a {
+    color: #0b3558;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    font-size: 14px;
+}
+
+.contenedor-turnos {
+    flex: 1;
+    max-width: 900px;
+    margin: 30px;
+    overflow-y: auto;
+}
+
+#cambiarPass {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #c5d4df;
+}
+
+/*barra de costado*/
+
+.sidebar {
+    width: 240px;
+    background-color: #c5d4df; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 0;
+    border-right: 1px solid #0b3558;
+}
+
+.menu-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.item-menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 24px;
+    color: #0b3558;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+.item-menu.activo {
+    background-color: #edf5f9;
+    border-top: 1px solid #0b3558;
+    border-bottom: 1px solid #0b3558;
+}
+
+.item-menu i {
+    font-size: 16px;
+    width: 20px;
+}
+
+.sidebar-footer {
+    padding: 0 24px;
+    font-size: 11px;
+    color: #50677a;
+    line-height: 1.4;
+}
+
+.titulo-pagina {
+    color: #0b3558;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.buscador-container {
+    max-width: 650px;
+}
+
+
+.fila-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.dato {
+    flex: 1;
+}
+
+.dato label {
+    display: block;
+    font-size: 11px;
+    color: #50677a;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.valor-destacado {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0b3558;
+}
+
+.valor {
+    font-size: 15px;
+    color: #1a202c;
+}
+
+.separador {
+    border: none;
+    border-top: 1px solid #c5d4df;
+    margin: 15px 0;
+}
+
+.footer-tarjeta {
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.faltan-dias {
+    font-size: 12px;
+    color: #50677a;
+    margin-top: 3px;
+}
+
+.estado-badge {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.estado-asignado {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.estado-cancelado {
+    background-color: #f8d7da;
+    color: #842029;
+}
