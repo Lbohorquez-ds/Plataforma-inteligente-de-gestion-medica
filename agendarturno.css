@@ -1,93 +1,608 @@
-/* --- LAYOUT GENERAL --- */
-body {
+
+/* Esto resetea los márgenes y paddings de todos los elementos para empezar desde cero */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #e3f0f7; /* Un celeste un poco más claro como el de Figma */
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body */
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #dde9f3;
     min-height: 100vh;
-    display: flex; 
-    flex-direction: column; /* Magia: pone la Topbar arriba y el resto abajo */
-}
-
-.contenedor-pantalla {
-    display: flex; /* Magia: pone el Sidebar a la izq y el Main a la der */
-    flex: 1; /* Ocupa el alto que sobra de la pantalla */
-}
-
-/* --- BARRA SUPERIOR (TOPBAR) --- */
-.topbar {
-    background-color: #0b3558; /* El azul oscuro del diseño */
-    height: 60px;
-    display: flex;
-    justify-content: space-between; /* Manda el logo a la izq y el usuario a la der */
-    align-items: center; /* Los centra verticalmente */
-    padding: 0 40px;
-    color: white;
-}
-
-.usuario-perfil {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* Separación entre el círculo y el nombre */
-    font-weight: bold;
-    font-size: 16px;
-}
-
-.avatar {
-    background-color: #4da6ff; /* Celeste brillante del Figma */
-    color: white;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%; /* Hace que sea un círculo perfecto */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-}
-
-.logo-img {
-    height: 40px; /* Esto hace que entre perfecto en tu barra de 60px */
-    width: auto; /* Mantiene las proporciones originales para que no se estire */
-    display: block;
-}
-
-
-/* --- BARRA LATERAL (SIDEBAR) --- */
-.sidebar {
-    width: 240px;
-    background-color: #c5d4df; 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 30px 0;
-    border-right: 1px solid #0b3558;
+    color: #1a202c;
 }
 
-.item-menu {
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ============================================================
+   ALERTA
+   ============================================================ */
+.toast {
+    position: fixed;
+    top: -120px;
+    /* empieza escondido arriba */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a4a8a;
+    color: #fff;
+    padding: 14px 24px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 14px 24px;
-    color: #0b3558; 
-    font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    max-width: 520px;
+    width: 90%;
+    box-shadow: 0 8px 32px rgba(11, 53, 88, 0.25);
+    z-index: 9999;
+    transition: top 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+/* Cuando tiene la clase "visible" baja y se ve */
+.toast.visible {
+    top: 20px;
+}
 
+.toast i {
+    font-size: 18px;
+    flex-shrink: 0;
+    color: #7dd3fc;
+}
+
+/* ============================================================
+   Topbar 
+   ============================================================ */
+.topbar {
+    background-color: #0b3558;
+    height: 62px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 36px;
+    color: white;
+    flex-shrink: 0;
+    z-index: 100;
+}
+
+.logo-img {
+    height: 38px;
+    width: auto;
+    display: block;
+}
+
+/* Nombre y avatar del usuario en la esquina superior derecha */
+.usuario-perfil {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* Círculo con las iniciales del usuario */
+.avatar {
+    background-color: #2563eb;
+    color: white;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================================
+   Layout general (sidebar + contenido principal)
+   ============================================================ */
+.contenedor-pantalla {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Sidebar (barra izquierda de navegación) */
+.sidebar {
+    width: 248px;
+    min-width: 248px;
+    background-color: #c5d4df;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px 0;
+    border-right: 1px solid #a8bfcf;
+}
+
+.menu-lateral {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cada ítem del menú lateral */
+.item-menu {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 14px 26px;
+    color: #0b3558;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.item-menu:hover {
+    background-color: #d8e6ef;
+}
+
+/* El ítem activo (la página en la que estás) tiene fondo más claro */
 .item-menu.activo {
-    background-color: #edf5f9;
-    border-top: 1px solid #0b3558;
-    border-bottom: 1px solid #0b3558;
+    background-color: #edf5fa;
+    border-top: 1px solid #a8bfcf;
+    border-bottom: 1px solid #a8bfcf;
 }
 
 .item-menu i {
-    font-size: 16px;
-    color: #50677a;
-    width: 20px;
+    font-size: 17px;
+    color: #4a6579;
+    width: 22px;
+    text-align: center;
 }
 
+/* Pie del sidebar con el texto legal */
 .sidebar-footer {
-    padding: 0 24px;
+    padding: 0 26px;
     font-size: 11px;
-    color: #50677a;
-    line-height: 1.4;
+    color: #4a6579;
+    line-height: 1.6;
+}
+
+/* Área principal donde se muestra el formulario */
+.contenido-principal {
+    flex: 1;
+    overflow-y: auto;
+    padding: 32px 48px 48px 48px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ============================================================
+   Encabezado
+   ============================================================ */
+.encabezado-pagina {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+.encabezado-pagina h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a202c;
+    letter-spacing: -0.3px;
+}
+
+/* Botón con la flecha para volver a la pantalla anterior */
+.btn-volver {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a202c;
+    font-size: 18px;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    transition: background 0.15s;
+}
+
+.btn-volver:hover {
+    background: rgba(0, 0, 0, 0.07);
+}
+
+/* ============================================================
+   Stepper
+   ============================================================ */
+.indicador-progreso {
+    display: flex;
+    align-items: flex-start;
+    max-width: 680px;
+    margin-bottom: 36px;
+    position: relative;
+}
+
+/* Línea gris de fondo que va de punta a punta */
+.indicador-progreso::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #b9ccd8;
+    z-index: 0;
+}
+
+/* Cada paso individual */
+.paso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 14px;
+    width: 25%;
+    position: relative;
+    cursor: default;
+}
+
+/* Línea azul que aparece debajo cuando el paso está completado */
+.paso-underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #2563eb;
+    z-index: 1;
+    transition: width 0.35s ease;
+}
+
+.paso.completado .paso-underline {
+    width: 100%;
+}
+
+/* Círculo con el número del paso */
+.circulo {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #8c98a4;
+    /* gris por defecto */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    user-select: none;
+}
+
+/* Cuando el paso está completo, el círculo se pone azul */
+.paso.completado .circulo {
+    background-color: #2563eb;
+    transform: scale(1.05);
+}
+
+.texto-paso {
+    font-weight: 600;
+    color: #1a202c;
+    font-size: 14px;
+    user-select: none;
+    text-align: center;
+}
+
+/* ============================================================
+   Cuerpo del formulario (todo en una sola columna)
+   ============================================================ */
+.form-body {
+    max-width: 680px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ============================================================
+   Fila con los dos selects (especialidad y profesional)
+   ============================================================ */
+.selects-row {
+    display: flex;
+    gap: 24px;
+}
+
+/* Cada grupo de label + select */
+.select-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Etiqueta pequeña arriba del select */
+.select-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #4a5568;
+}
+
+/* ============================================================
+   Select nativo estilizado 
+   ============================================================ */
+.native-select {
+    width: 100%;
+    padding: 10px 40px 10px 16px;
+    background-color: #e2e8f0;
+    border: none;
+    border-radius: 22px;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a202c;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    /* Flechita personalizada a la derecha */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234a6579' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    outline: none;
+    transition: background-color 0.15s, box-shadow 0.15s;
+    user-select: none;
+}
+
+.native-select:hover:not(:disabled) {
+    background-color: #d1dce7;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+}
+
+/* Cuando está enfocado (el usuario hace click) */
+.native-select:focus:not(:disabled) {
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    background-color: #d1dce7;
+}
+
+/* Cuando está deshabilitado (todavía no se eligió especialidad) */
+.native-select:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.native-select option {
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 500;
+    color: #1a202c;
+    background: #fff;
+    padding: 8px;
+}
+
+/* ============================================================
+   Etiquetas de sección (los textos "Seleccioná una fecha...")
+   ============================================================ */
+.section-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #4a5568;
+}
+
+/* ============================================================
+   CALENDARIO
+   ============================================================ */
+.calendario-contenedor {
+    background: #fff;
+    border: 1.5px solid #c5d4df;
+    border-radius: 12px;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    /* ocupa todo el ancho del formulario, la altura la controlan las celdas */
+}
+
+/* Encabezado del calendario: mes actual y flechas de navegación */
+.calendario-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-bottom: 1.5px solid #e2e8f0;
+}
+
+.cal-month-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a202c;
+}
+
+/* Botones de mes anterior / siguiente */
+.cal-nav-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #4a5568;
+    font-size: 13px;
+    padding: 5px 9px;
+    border-radius: 6px;
+    transition: background 0.15s, color 0.15s;
+    display: flex;
+    align-items: center;
+}
+
+.cal-nav-btn:hover {
+    background: #e2e8f0;
+    color: #1a202c;
+}
+
+/* Fila con los nombres de los días (Lu Ma Mi...) */
+.calendario-dias-semana {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 8px 16px 4px 16px;
+    gap: 4px;
+}
+
+.calendario-dias-semana span {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: #718096;
+}
+
+/* Grilla donde se muestran los días del mes */
+.calendario-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 4px 16px 10px 16px;
+    gap: 4px;
+}
+
+/*  días del calendario */
+.cal-day {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #1a202c;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    user-select: none;
+}
+
+.cal-day:hover:not(.vacio):not(.seleccionado) {
+    background: #dde9f3;
+}
+
+.cal-day.vacio {
+    cursor: default;
+}
+
+.cal-day.seleccionado {
+    background: #2563eb;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 50%;
+}
+
+.cal-day.hoy:not(.seleccionado) {
+    color: #2563eb;
+    font-weight: 700;
+}
+
+/* ============================================================
+   Horarios disponibles (los botones con horas)
+   ============================================================ */
+.horarios-label {
+    margin-top: 0;
+}
+
+/* Contenedor de los botones de horario */
+.grilla-horarios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    min-height: 44px;
+}
+
+/* Cada botón de horario */
+.horario-btn {
+    padding: 10px 22px;
+    border: 1.5px solid #b9ccd8;
+    border-radius: 22px;
+    background: #fff;
+    color: #1a202c;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s, color 0.2s;
+    user-select: none;
+    -webkit-user-select: none;
+    font-family: 'Inter', Arial, sans-serif;
+}
+
+.horario-btn:hover:not(.activo) {
+    border-color: #2563eb;
+    color: #2563eb;
+}
+
+/* Horario seleccionado */
+.horario-btn.activo {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #fff;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.form-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 8px;
+}
+
+/* Botón principal para confirmar el turno */
+.btn-agendar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 28px;
+    background: #0b3558;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Inter', Arial, sans-serif;
+    transition: background 0.2s, transform 0.15s;
+    user-select: none;
+}
+
+.btn-agendar:hover {
+    background: #0d3f6b;
+    transform: translateY(-1px);
+}
+
+.btn-agendar.hidden {
+    display: none;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 900px) {
+    .form-body {
+        max-width: 100%;
+    }
+
+    .indicador-progreso {
+        max-width: 100%;
+    }
+
+    .sidebar {
+        width: 200px;
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 680px) {
+    .selects-row {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .contenido-principal {
+        padding: 20px 16px 32px 16px;
+    }
+
+    .sidebar {
+        display: none;
+    }
 }
