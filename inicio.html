@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="inicio.css">
+</head>
+<body>
+    <!-- Barra superior -->
+    <header class="topbar">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="logo-axis.png" alt="Logo AXIS">
+        </div>
+
+        <div class="acciones">
+            <!-- Campanita -->
+            <div class="notificaciones">
+                <i class="fa-regular fa-bell"></i>
+                <div class="popup" id="popup-notificaciones">
+                    <p>No hay avisos por el momento</p>
+                </div>
+            </div>
+
+            <!-- Circulito iniciales -->
+            <div class="usuario-iniciales" id="usuario-iniciales">CM</div>
+
+            <!-- Nombre + menú -->
+            <div class="usuario">
+                <span id="usuario-nombre">Candela Melgarejo</span>
+                <i class="fa-solid fa-caret-down" id="flecha-menu"></i>
+                <ul class="menu-usuario" id="menu-usuario">
+                    <li><a href="perfil.html">Perfil</a></li>
+                    <li><a href="index.html">Cerrar sesión</a></li>
+                    <li><a href="ayuda.html">Ayuda</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Barra lateral -->
+    <aside class="sidebar">
+        <h2 class="Paciente">Paciente</h2>
+        <nav class="menu-lateral">
+            <a href="inicio.html" class="item-menu activo">
+                <img src="Inicio.png.png" alt="Inicio"> Inicio
+            </a>
+            <a href="agendarturno.html" class="item-menu">
+                <img src="Agregar.png.png" alt="Nuevo turno"> Nuevo turno
+            </a>
+            <a href="misturnos.html" class="item-menu">
+                <img src="Calendario.png.png" alt="Mis turnos"> Mis turnos
+            </a>
+            <a href="perfil.html" class="item-menu">
+                <img src="Usuario.png.png" alt="Mi perfil"> Mi perfil
+            </a>
+            <a href="https://wa.me/5491160279646"  class="item-menu">
+                <img src="chatbot.png.png" alt="Chatbot WA"> Chatbot WA
+            </a>
+            
+        </nav>
+        <div class="sidebar-footer">
+    <p>© 2026 AXIS — Todos los derechos reservados</p>
+    <p>Plataforma protegida bajo Ley 25.326</p>
+    </div>
+
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="contenido">
+        <!-- Encabezado -->
+        <section class="header">
+            <div class="saludo">
+                <h2>Buen día,</h2>
+                <h1>Candela Melgarejo</h1>
+                <p><b>¿Necesitás un turno médico hoy?</b></p>
+            </div>
+            <button class="btn-agendar" onclick="window.location.href='agendarturno.html'">>Agendar turno</button>
+        </section>
+
+        <!-- Panel con las tres cajas -->
+        <section class="panel">
+            <div class="box">
+                <h2><i class="fa-regular fa-calendar-days"></i> Turnos próximos</h2>
+                <p class="count"><span id="count-proximos">0</span></p>
+                <ul id="lista-proximos"></ul>
+                <button id="ver-proximos">Ver todos</button>
+            </div>
+
+            <div class="box">
+                <h2><i class="fa-solid fa-check"></i> Turnos realizados</h2>
+                <p class="count"><span id="count-realizados">0</span></p>
+                <ul id="lista-realizados"></ul>
+            </div>
+
+            <div class="box">
+                <h2><i class="fa-regular fa-bell"></i> Recordatorio activo</h2>
+                <p class="count"><span id="count-recordatorios">0</span></p>
+                <p id="recordatorio-msg"></p>
+            </div>
+        </section>
+
+        <!-- WhatsApp box abajo -->
+        <section class="whatsapp-box">
+            <div class="icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+            </div>
+            <div class="text">
+                <h3>Agendá por WhatsApp</h3>
+                <p>Escribinos y el chatbot te asigna un turno en segundos.</p>
+            </div>
+            <div class="arrow">➔</div>
+        </section>
+    </main>
+
+    <script src="inicio.js"></script>
+</body>
+</html>
