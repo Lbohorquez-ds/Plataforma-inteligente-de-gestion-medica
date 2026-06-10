@@ -1,0 +1,296 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    background: #cde0ee;
+}
+
+/* --- Barra lateral --- */
+.sidebar {
+    width: 220px;
+    background: #bebbbb; /* gris */
+    color: #000000;
+    min-height: 40vh;
+    padding: 20px;
+    margin-top: 45px;
+    display: flex;              /* 👈 activamos flexbox */
+    flex-direction: column;     /* elementos en columna */
+    justify-content: space-between; /* menú arriba, footer abajo */
+}
+
+.sidebar-footer {
+    font-size: 12px;
+    color: #181717;
+    text-align: center;
+    padding: 10px 5px;
+}
+
+
+.menu-lateral a {
+    display: flex;
+    align-items: center;
+    color: #000000;
+    text-decoration: none;
+    margin: 14px 0;            /* más espacio entre ítems */
+    font-size: 17px;           /* 👈 texto más grande */
+    font-weight: bold;         /* todos en negrita */
+}
+
+.menu-lateral a img {
+    width: 26px;               /* 👈 íconos más grandes */
+    height: 26px;
+    margin-right: 12px;
+}
+
+.menu-lateral .activo {
+    color: #0d1b2a;            /* azul oscuro para resaltar */
+}
+
+
+/* --- Contenido principal --- */
+.contenido {
+    margin-left: 200px; /* espacio para la barra lateral */
+    padding: 55px 15px 15px; /* más compacto arriba */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Encabezado saludo --- */
+.header {
+    background: #0b3558; /* azul oscuro */
+    color: #c7e3e4; /* texto claro */    
+    padding: 25px;          /* más grande */
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 25px;    /* más espacio debajo */
+    max-width: 95%;
+    margin-left: 5px;
+    
+}
+
+.saludo h1 {
+    font-size: 26px;        /* más grande */
+}
+
+.saludo h2 {
+    font-size: 18px;
+}
+
+.saludo p {
+    margin: 10px 0 0;
+    font-size: 14px;
+}
+
+
+.btn-agendar {
+    background: #2980b9;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+
+}
+
+.btn-agendar:hover {
+    background: #145a86;
+}
+
+/* --- Panel con cajas --- */
+.panel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;              /* un poco más de aire */
+    margin-top: 25px;
+}
+
+.box {
+    background: #b1b4b9;
+    border-radius: 12px;
+    padding: 18px;          /* más grande */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.box h2 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.count {
+    font-size: 26px;        /* más grande */
+    margin: 12px 0;
+}
+
+
+.box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.box li {
+    background: #ecf0f1;
+    margin: 4px 0;
+    padding: 6px;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 8px;
+    padding: 7px 12px;
+    border: none;
+    background: #2980b9;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1f6391;
+}
+
+.box h2 i {
+    margin-right: 6px;
+    color: #2980b9;
+}
+
+/* --- WhatsApp box --- */
+.whatsapp-box {
+    background: #b1b4b9;
+    border-radius: 10px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 200px;       /* 👈 lo empuja más abajo */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.whatsapp-box .icon img {
+    width: 28px;
+    height: 28px;
+}
+
+.whatsapp-box .text {
+    flex: 1;
+    margin-left: 8px;
+}
+
+.whatsapp-box h3 {
+    margin: 0;
+    font-size: 15px;
+    color: #2c3e50;
+}
+
+.whatsapp-box p {
+    margin: 2px 0 0;
+    font-size: 13px;
+    color: #555;
+}
+
+.whatsapp-box .arrow {
+    font-size: 18px;
+    color: #2980b9;
+    font-weight: bold;
+}
+
+/* --- Barra superior --- */
+.topbar {
+    background: #0b3558; /* azul oscuro */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 45px;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 35px;
+}
+
+.acciones {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Campanita */
+.notificaciones {
+    position: relative;
+    cursor: pointer;
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background: white;
+    color: #333;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    font-size: 13px;
+}
+
+/* Circulito iniciales */
+.usuario-iniciales {
+    background: #2980b9;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Menú usuario desplegable */
+.usuario {
+    position: relative;
+    cursor: pointer;
+}
+
+.menu-usuario {
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    background: #0b3558;
+    color: white;
+    list-style: none;
+    padding: 8px;
+    border-radius: 5px;
+    min-width: 140px;
+    z-index: 1000;
+}
+
+.menu-usuario li {
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.menu-usuario li:hover {
+    background: #1f6391;
+    border-radius: 3px;
+}
+
+.menu-usuario li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
