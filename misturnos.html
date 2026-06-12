@@ -27,27 +27,25 @@
 
     <div class="contenedor-pantalla">
 
+     <!-- Sidebar (barra izquierda)  -->
         <aside class="sidebar">
             <nav class="menu-lateral">
-                <a href="inicio.html" class="item-menu">
+                <a href="inicio.html" class="item-menu" id="nav-inicio">
                     <i class="fa-solid fa-table-cells-large"></i>
-                    Inicio
+                    <span>Inicio</span>
                 </a>
-
-                <a href="agendarturno.html" class="item-menu">
+                <a href="agendarturno.html" class="item-menu" id="nav-nuevo-turno">
                     <i class="fa-regular fa-circle-plus"></i>
-                    Nuevo turno
+                    <span>Nuevo turno</span>
                 </a>
-
-                <a href="misturnos.html" class="item-menu activo">
+                <a href="misturnos.html" class="item-menu activo" id="nav-mis-turnos">
                     <i class="fa-regular fa-calendar-days"></i>
-                    Mis turnos
+                    <span>Mis turnos</span>
                 </a>
-                 
-                <a href="index.html" class="item-menu"><i class="fa-solid fa-user"></i>Cerrar Sesión</a>
                 
+                <a href="index.html" class="item-menu"><i class="fa-solid fa-user"></i>Cerrar Sesión</a>
             </nav>
-
+            <!-- Texto legal en la parte de abajo del sidebar -->
             <footer class="sidebar-footer">
                 <p>© 2026 AXIS — Todos los derechos reservados</p>
                 <p>Plataforma protegida bajo Ley 25.326</p>
@@ -62,7 +60,7 @@
             <div class="buscador-container">
                 <input type="text" id="buscarEspecialidad" placeholder="Buscar por especialidad...">
             </div>
-
+            
             <!-- LISTA DE TURNOS -->
             <div id="listaTurnos">
 
@@ -132,11 +130,10 @@
                         </div>
                     </div>
                 </div>
-
-            </div>
+            
         </main>
     </div>
     <script src="misTurnos.js"></script>
     
-</body>
+    </body>
 </html>

@@ -249,10 +249,26 @@ function actualizarBotonAgendar() {
 
 // Cuando el usuario hace click en Agendar
 dom.btnAgendar.addEventListener('click', () => {
-    dom.pasos[3].classList.add('completado'); // marca el último paso como completo
-    mostrarToast(); // muestra el cartelito de confirmación
-    // Después de 2.8 segundos va a la pantalla de Mis Turnos
-    setTimeout(() => { window.location.href = 'misturnos.html'; }, 2800);
+    const turnos = JSON.parse(localStorage.getItem("turnos")) || [];
+
+    const nuevoTurno = {
+        especialidad: state.especialidad,
+        profesional: state.profesional,
+        fecha: formatFechaLabel(state.fecha),
+        horario: state.horario,
+        estado: "Asignado"
+    };
+//se agrega un nuevo turno al localstorage
+    turnos.push(nuevoTurno);
+    //guarda la lista nueva em el navegador
+    localStorage.setItem("turnos", JSON.stringify(turnos));
+
+    dom.pasos[3].classList.add('completado');
+    mostrarToast(); //muestra la confi
+
+    setTimeout(() => {
+        window.location.href = 'misturnos.html';
+    }, 1000);
 });
 
 /* ============================================================

@@ -59,7 +59,7 @@ function login() {
             alert("Bienvenido Profesional");
         } else if (rol === "paciente") {
             alert("Bienvenido Paciente");
-            window.location.href = "misturnos.html"; 
+            window.location.href = "inicio.html"; 
         }
     } else {
         alert("Usuario o contraseña incorrectos")
